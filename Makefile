@@ -8,7 +8,7 @@ SRC_DIR=$(ROOT_DIR)/src
 TEST_DIR=$(ROOT_DIR)/tests
 
 CC=gcc
-CFLAGS=-Wall -std=c99 
+CFLAGS=-Wall -std=c99 -O0 -g
 INC=-I$(ROOT_DIR) #THIS IS SETTING THE INCLUDE PATH TO THE PROJECT ROOT DIRECTORY
 
 # GOOD TO NOTE:
@@ -52,6 +52,9 @@ run:
 
 run_tests:
 	$(BIN_DIR)/unit_tests
+
+debug:
+	lldb --file $(BIN_DIR)/main
 
 attempt:
 	make clean && \
